@@ -39,7 +39,7 @@ export const About: React.FC = () => {
 
               {!photoError ? (
                 <img
-                  src="/profile/michal-molenda.jpg"
+                  src={`${import.meta.env.BASE_URL}profile/michal-molenda.jpg`}
                   alt="Michał Molenda - 3D Hard Surface & Vehicle Artist"
                   onError={() => setPhotoError(true)}
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"

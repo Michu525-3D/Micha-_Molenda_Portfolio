@@ -68,6 +68,10 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
       ? 'aspect-square'
       : '';
 
+  const resolvedSrc = src && src.startsWith('/')
+    ? `${import.meta.env.BASE_URL}${src.replace(/^\//, '')}`
+    : src;
+
   return (
     <div className={`relative overflow-hidden bg-[#0e1015] ${aspectClass} ${className}`}>
       {/* Loading Skeleton */}
@@ -76,7 +80,7 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
       )}
       
       <img
-        src={src}
+        src={resolvedSrc}
         alt={alt}
         loading="lazy"
         onLoad={() => setLoaded(true)}
