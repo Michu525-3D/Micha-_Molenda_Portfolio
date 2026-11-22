@@ -1,10 +1,11 @@
 import React from 'react';
-import { SKILL_CATEGORIES } from '../data/portfolioData';
+import { PORTFOLIO_DATA_EN, PORTFOLIO_DATA_PL } from '../data/portfolioData';
 import { Box, Layers, Cpu, Gamepad2, Wrench, Check } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Skills: React.FC = () => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
+  const currentSkillCategories = language === 'pl' ? PORTFOLIO_DATA_PL.skillCategories : PORTFOLIO_DATA_EN.skillCategories;
 
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {
@@ -44,7 +45,7 @@ export const Skills: React.FC = () => {
 
         {/* Skill Clusters Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {SKILL_CATEGORIES.map((category, idx) => (
+          {currentSkillCategories.map((category, idx) => (
             <div
               key={idx}
               className="p-6 rounded-xl bg-[#0e1017] border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col justify-between space-y-6"

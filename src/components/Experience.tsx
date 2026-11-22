@@ -1,10 +1,11 @@
 import React from 'react';
-import { EXPERIENCES } from '../data/portfolioData';
+import { PORTFOLIO_DATA_EN, PORTFOLIO_DATA_PL } from '../data/portfolioData';
 import { Calendar, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Experience: React.FC = () => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
+  const currentExperiences = language === 'pl' ? PORTFOLIO_DATA_PL.experiences : PORTFOLIO_DATA_EN.experiences;
 
   return (
     <section id="experience" className="relative py-28 border-t border-white/5 bg-[#08080a]">
@@ -29,7 +30,7 @@ export const Experience: React.FC = () => {
 
         {/* Timeline / Cards */}
         <div className="relative border-l border-white/10 ml-3 md:ml-6 pl-6 md:pl-10 space-y-12">
-          {EXPERIENCES.map((exp, index) => (
+          {currentExperiences.map((exp, index) => (
             <div key={index} className="relative group">
               
               {/* Timeline Pin Indicator */}

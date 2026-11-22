@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import type { Project } from '../data/portfolioData';
-import { PROJECTS } from '../data/portfolioData';
+import { PORTFOLIO_DATA_EN, PORTFOLIO_DATA_PL } from '../data/portfolioData';
 import { ProjectImage } from './ProjectImage';
 import { ProjectModal } from './ProjectModal';
 import { Eye, ChevronRight } from 'lucide-react';
@@ -8,8 +7,13 @@ import { useLanguage } from '../context/LanguageContext';
 
 export const Portfolio: React.FC = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>('ALL');
-  const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
-  const { t } = useLanguage();
+  const [activeModalProjectId, setActiveModalProjectId] = useState<string | null>(null);
+  const { language, t } = useLanguage();
+
+  const currentDataset = language === 'pl' ? PORTFOLIO_DATA_PL : PORTFOLIO_DATA_EN;
+  const currentProjects = currentDataset.projects;
+
+  const activeModalProject = currentProjects.find((p) => p.id === activeModalProjectId) || null;
 
   const filterOptions = [
     { label: t('portfolio.all'), value: 'ALL' },
@@ -18,21 +22,16 @@ export const Portfolio: React.FC = () => {
     { label: t('portfolio.props'), value: 'VISUALIZATION' },
   ];
 
-  const filteredProjects = PROJECTS.filter((item) => {
+  const filteredProjects = currentProjects.filter((item) => {
     if (selectedFilter === 'ALL') return true;
     if (selectedFilter === 'GAME') {
-      return item.category.toLowerCase().includes('game');
+      return item.id === 'biogenesis' || item.id === 'undo-revolution' || item.id === 'rubens-games';
     }
     if (selectedFilter === 'VEHICLE') {
-      return (
-        item.category.toLowerCase().includes('vehicle') ||
-        item.subtitle.toLowerCase().includes('vehicle') ||
-        item.title.toLowerCase().includes('star wars') ||
-        item.title.toLowerCase().includes('biogenesis')
-      );
+      return item.id === 'star-wars-rogue-squadron' || item.id === 'biogenesis';
     }
     if (selectedFilter === 'VISUALIZATION') {
-      return item.category.toLowerCase().includes('visualization');
+      return item.id === 'gpd-agency' || item.id === 'furniture-visualization';
     }
     return true;
   });
@@ -83,7 +82,7 @@ export const Portfolio: React.FC = () => {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              onClick={() => setActiveModalProject(project)}
+              onClick={() => setActiveModalProjectId(project.id)}
               className="group relative bg-[#0e1017] border border-white/10 rounded-xl overflow-hidden hover:border-[#00e5ff]/60 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.8),0_0_20px_rgba(0,229,255,0.15)] flex flex-col cursor-pointer glitch-hover"
             >
               {/* Media Thumbnail Container */}
@@ -169,7 +168,7 @@ export const Portfolio: React.FC = () => {
         {/* Modal Window for active project details */}
         <ProjectModal
           project={activeModalProject}
-          onClose={() => setActiveModalProject(null)}
+          onClose={() => setActiveModalProjectId(null)}
         />
 
       </div>

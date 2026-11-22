@@ -1,10 +1,11 @@
 import React from 'react';
-import { COMMUNITY_PROJECTS } from '../data/portfolioData';
+import { PORTFOLIO_DATA_EN, PORTFOLIO_DATA_PL } from '../data/portfolioData';
 import { ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Community: React.FC = () => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
+  const currentCommunity = language === 'pl' ? PORTFOLIO_DATA_PL.communityProjects : PORTFOLIO_DATA_EN.communityProjects;
 
   return (
     <section id="community" className="relative py-28 border-t border-white/5 bg-[#08080a]">
@@ -29,7 +30,7 @@ export const Community: React.FC = () => {
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {COMMUNITY_PROJECTS.map((item, index) => (
+          {currentCommunity.map((item, index) => (
             <div
               key={index}
               className="p-6 rounded-xl bg-[#0d0f16] border border-white/10 hover:border-[#00e5ff]/50 transition-all duration-300 flex flex-col justify-between space-y-6 group"
