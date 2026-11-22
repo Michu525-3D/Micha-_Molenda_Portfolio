@@ -75,22 +75,6 @@ export const Hero: React.FC = () => {
             </a>
           </div>
 
-          {/* Technical Specs Counter Bar */}
-          <div className="grid grid-cols-3 gap-6 pt-6 border-t border-white/10 w-full max-w-lg">
-            <div>
-              <div className="text-2xl font-bold font-mono-tech text-white">{t('hero.stat1.val')}</div>
-              <div className="text-xs text-gray-400 uppercase tracking-wider font-mono-tech">{t('hero.stat1.label')}</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold font-mono-tech text-[#00e5ff]">{t('hero.stat2.val')}</div>
-              <div className="text-xs text-gray-400 uppercase tracking-wider font-mono-tech">{t('hero.stat2.label')}</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold font-mono-tech text-white">{t('hero.stat3.val')}</div>
-              <div className="text-xs text-gray-400 uppercase tracking-wider font-mono-tech">{t('hero.stat3.label')}</div>
-            </div>
-          </div>
-
         </div>
 
         {/* Right Column: Artist Photo or 3D Showcase Placeholder */}
