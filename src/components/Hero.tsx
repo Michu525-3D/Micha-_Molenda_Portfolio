@@ -50,7 +50,7 @@ export const Hero: React.FC = () => {
           <div className="flex flex-wrap items-center gap-4 pt-4">
             <a
               href="#portfolio"
-              className="px-6 py-3.5 rounded bg-[#00e5ff] hover:bg-[#00b4d8] text-white font-semibold text-sm tracking-wider uppercase transition-all duration-300 shadow-[0_0_25px_rgba(0,229,255,0.4)] flex items-center gap-2 group cursor-pointer"
+              className="px-6 py-3.5 rounded bg-[#00e5ff] hover:bg-[#00b4d8] text-white font-semibold text-sm tracking-wider uppercase transition-all duration-300 shadow-[0_0_25px_rgba(0,229,255,0.4)] flex items-center gap-2 group cursor-pointer glitch-hover"
             >
               <span>Explore Works</span>
               <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -58,7 +58,7 @@ export const Hero: React.FC = () => {
 
             <a
               href="#about"
-              className="px-6 py-3.5 rounded bg-white/5 hover:bg-white/10 border border-white/15 text-white font-medium text-sm tracking-wider uppercase transition-all duration-300 flex items-center gap-2 cursor-pointer"
+              className="px-6 py-3.5 rounded bg-white/5 hover:bg-white/10 border border-white/15 text-white font-medium text-sm tracking-wider uppercase transition-all duration-300 flex items-center gap-2 cursor-pointer glitch-hover"
             >
               <User className="w-4 h-4 text-gray-400" />
               <span>About Me</span>
@@ -66,7 +66,7 @@ export const Hero: React.FC = () => {
 
             <a
               href="#contact"
-              className="px-6 py-3.5 rounded bg-white/5 hover:bg-white/10 border border-white/15 text-white font-medium text-sm tracking-wider uppercase transition-all duration-300 flex items-center gap-2 cursor-pointer"
+              className="px-6 py-3.5 rounded bg-white/5 hover:bg-white/10 border border-white/15 text-white font-medium text-sm tracking-wider uppercase transition-all duration-300 flex items-center gap-2 cursor-pointer glitch-hover"
             >
               <Mail className="w-4 h-4 text-[#00e5ff]" />
               <span>Contact</span>

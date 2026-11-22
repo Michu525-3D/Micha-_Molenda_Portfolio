@@ -78,19 +78,51 @@
   border-right: 2px solid #00e5ff;
 }
 
-@keyframes glitchScan {
-  0% { transform: translateY(-100%); opacity: 0; }
-  50% { opacity: 0.8; }
-  100% { transform: translateY(200%); opacity: 0; }
+/* Battlefield-style interactive hover glitch */
+@keyframes bfGlitchFlicker {
+  0% {
+    transform: translate(0, 0);
+    filter: drop-shadow(0 0 0 rgba(0, 229, 255, 0));
+  }
+  15% {
+    transform: translate(-2px, 1px) skewX(-1.5deg);
+    filter: drop-shadow(2px 0 0 rgba(0, 229, 255, 0.75)) drop-shadow(-2px 0 0 rgba(255, 255, 255, 0.6));
+  }
+  30% {
+    transform: translate(2px, -1px) skewX(1deg);
+    filter: drop-shadow(-2px 0 0 rgba(0, 229, 255, 0.75)) drop-shadow(2px 0 0 rgba(14, 165, 233, 0.6));
+  }
+  45% {
+    transform: translate(-1px, 0);
+    filter: drop-shadow(1px 0 0 rgba(0, 229, 255, 0.5));
+  }
+  60% {
+    transform: translate(1px, 1px);
+    filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.5));
+  }
+  100% {
+    transform: translate(0, 0);
+    filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.35));
+  }
 }
 
-@keyframes glitchText {
-  0%, 100% { transform: none; opacity: 1; }
-  7% { transform: skew(-8deg, -4deg) translate(-2px, 1px); color: #38bdf8; }
-  10% { transform: none; opacity: 1; }
-  27% { transform: skew(4deg, 2deg) translate(2px, -1px); color: #00e5ff; }
-  30% { transform: none; }
-  35% { opacity: 0.6; }
-  37% { opacity: 1; }
+.glitch-hover {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
+
+.glitch-hover:hover {
+  animation: bfGlitchFlicker 0.35s ease-out forwards;
+}
+
+/* Subtle chromatic shift for text elements on hover */
+.glitch-text-hover {
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.glitch-text-hover:hover {
+  text-shadow: -1.5px 0 0 rgba(0, 229, 255, 0.8), 1.5px 0 0 rgba(255, 255, 255, 0.7);
+  animation: bfGlitchFlicker 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
 

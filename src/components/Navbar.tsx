@@ -56,7 +56,7 @@ export const Navbar: React.FC = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative py-1 group"
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative py-1 group glitch-text-hover"
             >
               {link.name}
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#00e5ff] transition-all duration-300 group-hover:w-full" />
@@ -67,7 +67,7 @@ export const Navbar: React.FC = () => {
             href="https://www.artstation.com/energydronepl"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono-tech uppercase tracking-wider bg-white/5 border border-white/10 text-gray-200 hover:bg-[#00e5ff] hover:text-white hover:border-[#00e5ff] transition-all duration-300"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono-tech uppercase tracking-wider bg-white/5 border border-white/10 text-gray-200 hover:bg-[#00e5ff] hover:text-white hover:border-[#00e5ff] transition-all duration-300 glitch-hover"
           >
             <span>ArtStation</span>
             <ArrowUpRight className="w-3.5 h-3.5" />

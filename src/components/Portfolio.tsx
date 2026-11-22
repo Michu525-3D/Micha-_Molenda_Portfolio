@@ -82,7 +82,7 @@ export const Portfolio: React.FC = () => {
             <div
               key={project.id}
               onClick={() => setActiveModalProject(project)}
-              className="group relative bg-[#0e1017] border border-white/10 rounded-xl overflow-hidden hover:border-[#00e5ff]/60 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.8),0_0_20px_rgba(0,229,255,0.15)] flex flex-col cursor-pointer"
+              className="group relative bg-[#0e1017] border border-white/10 rounded-xl overflow-hidden hover:border-[#00e5ff]/60 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.8),0_0_20px_rgba(0,229,255,0.15)] flex flex-col cursor-pointer glitch-hover"
             >
               {/* Media Thumbnail Container */}
               <div className="relative overflow-hidden aspect-[16/10] bg-[#06070a]">
