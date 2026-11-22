@@ -6,7 +6,7 @@ export const Skills: React.FC = () => {
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {
       case 'Box':
-        return <Box className="w-5 h-5 text-[#ff5500]" />;
+        return <Box className="w-5 h-5 text-[#00e5ff]" />;
       case 'Layers':
         return <Layers className="w-5 h-5 text-[#0ea5e9]" />;
       case 'Cpu':
@@ -27,8 +27,8 @@ export const Skills: React.FC = () => {
         
         {/* Section Header */}
         <div className="space-y-3">
-          <div className="flex items-center gap-2 text-xs font-mono-tech tracking-widest uppercase text-[#ff5500]">
-            <span className="w-6 h-[1px] bg-[#ff5500]" />
+          <div className="flex items-center gap-2 text-xs font-mono-tech tracking-widest uppercase text-[#00e5ff]">
+            <span className="w-6 h-[1px] bg-[#00e5ff]" />
             TECHNICAL PROFICIENCY & WORKFLOWS
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white uppercase">
@@ -70,7 +70,7 @@ export const Skills: React.FC = () => {
                     className="flex items-center justify-between text-xs font-mono-tech py-1.5 px-2 rounded bg-white/[0.02] border border-white/5 text-gray-300 hover:text-white hover:bg-white/[0.05] transition-colors"
                   >
                     <span>{skill}</span>
-                    <Check className="w-3.5 h-3.5 text-[#ff5500]/70" />
+                    <Check className="w-3.5 h-3.5 text-[#00e5ff]/70" />
                   </div>
                 ))}
               </div>

@@ -14,16 +14,16 @@ export const Contact: React.FC = () => {
   return (
     <section id="contact" className="relative py-28 border-t border-white/5 bg-[#0a0c12]">
       {/* Heavy glow effect */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-72 bg-[#ff5500]/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-72 bg-[#00e5ff]/10 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10 text-center space-y-12">
         
         {/* Header */}
         <div className="space-y-4">
-          <div className="inline-flex items-center gap-2 text-xs font-mono-tech tracking-widest uppercase text-[#ff5500]">
-            <span className="w-6 h-[1px] bg-[#ff5500]" />
+          <div className="inline-flex items-center gap-2 text-xs font-mono-tech tracking-widest uppercase text-[#00e5ff]">
+            <span className="w-6 h-[1px] bg-[#00e5ff]" />
             INITIATE CONTACT
-            <span className="w-6 h-[1px] bg-[#ff5500]" />
+            <span className="w-6 h-[1px] bg-[#00e5ff]" />
           </div>
 
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight uppercase">
@@ -41,14 +41,14 @@ export const Contact: React.FC = () => {
           {/* Email Callout */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl bg-black/40 border border-white/10">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-[#ff5500]/10 border border-[#ff5500]/30 flex items-center justify-center text-[#ff5500]">
+              <div className="w-10 h-10 rounded-lg bg-[#00e5ff]/10 border border-[#00e5ff]/30 flex items-center justify-center text-[#00e5ff]">
                 <Mail className="w-5 h-5" />
               </div>
               <div className="text-left">
                 <div className="text-[10px] font-mono-tech uppercase text-gray-400">Direct Email</div>
                 <a
                   href={`mailto:${email}`}
-                  className="text-base sm:text-lg font-bold text-white hover:text-[#ff5500] transition-colors"
+                  className="text-base sm:text-lg font-bold text-white hover:text-[#00e5ff] transition-colors"
                 >
                   {email}
                 </a>
@@ -67,7 +67,7 @@ export const Contact: React.FC = () => {
 
               <a
                 href={`mailto:${email}`}
-                className="px-4 py-2 rounded-lg bg-[#ff5500] hover:bg-[#ff6a1a] text-white text-xs font-mono-tech uppercase tracking-wider font-semibold shadow-[0_0_15px_rgba(255,85,0,0.3)] transition-all"
+                className="px-4 py-2 rounded-lg bg-[#00e5ff] hover:bg-[#00b4d8] text-white text-xs font-mono-tech uppercase tracking-wider font-semibold shadow-[0_0_15px_rgba(0,229,255,0.3)] transition-all"
               >
                 Contact Me
               </a>
@@ -82,15 +82,15 @@ export const Contact: React.FC = () => {
               href="https://www.artstation.com/energydronepl"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-[#ff5500] transition-all flex items-center justify-between group"
+              className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-[#00e5ff] transition-all flex items-center justify-between group"
             >
               <div className="text-left">
                 <div className="text-xs font-mono-tech text-gray-400">ArtStation Portfolio</div>
-                <div className="text-base font-bold text-white group-hover:text-[#ff5500] transition-colors">
+                <div className="text-base font-bold text-white group-hover:text-[#00e5ff] transition-colors">
                   energydronepl
                 </div>
               </div>
-              <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-white group-hover:bg-[#ff5500] transition-colors">
+              <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-white group-hover:bg-[#00e5ff] transition-colors">
                 <ArrowUpRight className="w-4 h-4" />
               </div>
             </a>

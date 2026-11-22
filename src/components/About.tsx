@@ -13,8 +13,8 @@ export const About: React.FC = () => {
         
         {/* Section title */}
         <div className="space-y-3">
-          <div className="flex items-center gap-2 text-xs font-mono-tech tracking-widest uppercase text-[#ff5500]">
-            <span className="w-6 h-[1px] bg-[#ff5500]" />
+          <div className="flex items-center gap-2 text-xs font-mono-tech tracking-widest uppercase text-[#00e5ff]">
+            <span className="w-6 h-[1px] bg-[#00e5ff]" />
             PROFILE & ARTISTIC PHILOSOPHY
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white uppercase">
@@ -31,7 +31,7 @@ export const About: React.FC = () => {
               
               {/* Sci-fi HUD Overlays */}
               <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/60 backdrop-blur-md border border-white/10 text-[10px] font-mono-tech text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#ff5500]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00e5ff]" />
                 <span>ARTIST VIEWPORT // CAM_01</span>
               </div>
 
@@ -44,7 +44,7 @@ export const About: React.FC = () => {
                 />
               ) : (
                 <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center bg-gradient-to-b from-[#131722] to-[#0a0c10]">
-                  <div className="w-20 h-20 rounded-full border border-white/15 bg-white/5 flex items-center justify-center mb-4 text-[#ff5500]">
+                  <div className="w-20 h-20 rounded-full border border-white/15 bg-white/5 flex items-center justify-center mb-4 text-[#00e5ff]">
                     <User className="w-8 h-8" />
                   </div>
                   <div className="text-white font-bold text-base tracking-wide">
@@ -64,7 +64,7 @@ export const About: React.FC = () => {
                 <div className="text-sm font-bold text-white tracking-wide">
                   MICHAŁ MOLENDA
                 </div>
-                <div className="text-xs font-mono-tech text-[#ff5500]">
+                <div className="text-xs font-mono-tech text-[#00e5ff]">
                   GAMES • HARD SURFACE • VEHICLES • VISUALIZATION
                 </div>
               </div>
@@ -84,7 +84,7 @@ export const About: React.FC = () => {
                 I enjoy creating detailed assets, vehicles and visual experiences, combining technical precision with creativity. My experience ranges from game art production and environment assets to product visualization, motion design and experimental projects.
               </p>
 
-              <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-light border-l-2 border-[#ff5500] pl-4">
+              <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-light border-l-2 border-[#00e5ff] pl-4">
                 I'm constantly developing my skills, exploring new workflows and looking for opportunities to create compelling visual experiences.
               </p>
             </div>
@@ -92,7 +92,7 @@ export const About: React.FC = () => {
             {/* Core Pillars */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
               <div className="p-4 rounded-lg bg-white/[0.02] border border-white/5 space-y-2">
-                <div className="text-[#ff5500] text-xs font-mono-tech uppercase tracking-wider font-bold">
+                <div className="text-[#00e5ff] text-xs font-mono-tech uppercase tracking-wider font-bold">
                   01 // PRECISION
                 </div>
                 <div className="text-sm font-semibold text-white">Hard Surface Craft</div>

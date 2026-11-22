@@ -49,7 +49,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         {/* Top Header Bar */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#08080a]">
           <div className="flex items-center gap-3">
-            <span className="px-2.5 py-1 rounded bg-[#ff5500]/10 border border-[#ff5500]/30 text-[#ff5500] text-xs font-mono-tech tracking-wider uppercase">
+            <span className="px-2.5 py-1 rounded bg-[#00e5ff]/10 border border-[#00e5ff]/30 text-[#00e5ff] text-xs font-mono-tech tracking-wider uppercase">
               {project.category}
             </span>
             <span className="text-gray-400 text-xs font-mono-tech hidden sm:inline">
@@ -82,7 +82,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               />
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 flex items-center justify-between text-xs font-mono-tech text-gray-300">
                 <span>{currentDisplayImage.caption}</span>
-                <span className="text-[#ff5500]">
+                <span className="text-[#00e5ff]">
                   [{activeImageIndex + 1} / {allImages.length}]
                 </span>
               </div>
@@ -96,7 +96,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   onClick={() => setActiveImageIndex(idx)}
                   className={`relative rounded-md overflow-hidden border transition-all duration-200 text-left aspect-video bg-[#12151d] cursor-pointer ${
                     activeImageIndex === idx
-                      ? 'border-[#ff5500] ring-2 ring-[#ff5500]/40 scale-[1.02]'
+                      ? 'border-[#00e5ff] ring-2 ring-[#00e5ff]/40 scale-[1.02]'
                       : 'border-white/10 opacity-60 hover:opacity-100 hover:border-white/30'
                   }`}
                 >
@@ -122,7 +122,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 <h2 className="text-2xl md:text-3xl font-extrabold text-white uppercase tracking-tight">
                   {project.title}
                 </h2>
-                <p className="text-base text-[#ff5500] font-mono-tech mt-1">
+                <p className="text-base text-[#00e5ff] font-mono-tech mt-1">
                   {project.subtitle}
                 </p>
               </div>
@@ -137,7 +137,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               {/* Responsibilities */}
               <div className="space-y-3 pt-2">
                 <h3 className="text-sm font-mono-tech uppercase tracking-wider text-white font-bold flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#ff5500]" />
+                  <CheckCircle2 className="w-4 h-4 text-[#00e5ff]" />
                   Key Scope & Responsibilities
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -146,7 +146,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                       key={i}
                       className="flex items-start gap-2.5 text-xs md:text-sm text-gray-300 p-2.5 rounded bg-white/[0.02] border border-white/5"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#ff5500] mt-1.5 shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#00e5ff] mt-1.5 shrink-0" />
                       <span>{resp}</span>
                     </div>
                   ))}
@@ -181,7 +181,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <div className="p-4 rounded-lg bg-white/[0.03] border border-white/10 space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono-tech text-gray-400 uppercase tracking-wider flex items-center gap-1.5">
-                    <Cpu className="w-3.5 h-3.5 text-[#ff5500]" />
+                    <Cpu className="w-3.5 h-3.5 text-[#00e5ff]" />
                     Tools & Technologies
                   </span>
                   <span className="text-[10px] text-gray-500 font-mono-tech">Editable in data</span>
@@ -191,7 +191,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   {project.tools.map((tool, tIdx) => (
                     <span
                       key={tIdx}
-                      className="px-2.5 py-1 rounded bg-[#ff5500]/10 border border-[#ff5500]/25 text-white text-xs font-mono-tech tracking-wide"
+                      className="px-2.5 py-1 rounded bg-[#00e5ff]/10 border border-[#00e5ff]/25 text-white text-xs font-mono-tech tracking-wide"
                     >
                       {tool}
                     </span>

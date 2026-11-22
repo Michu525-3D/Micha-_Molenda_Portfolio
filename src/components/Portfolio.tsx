@@ -38,7 +38,7 @@ export const Portfolio: React.FC = () => {
   return (
     <section id="portfolio" className="relative py-28 border-t border-white/5 bg-[#08080a]">
       {/* Background accents */}
-      <div className="absolute top-1/2 left-0 w-80 h-80 bg-[#ff5500]/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-80 h-80 bg-[#00e5ff]/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 right-0 w-96 h-96 bg-[#0ea5e9]/5 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 space-y-12">
@@ -46,8 +46,8 @@ export const Portfolio: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-3">
-            <div className="flex items-center gap-2 text-xs font-mono-tech tracking-widest uppercase text-[#ff5500]">
-              <span className="w-6 h-[1px] bg-[#ff5500]" />
+            <div className="flex items-center gap-2 text-xs font-mono-tech tracking-widest uppercase text-[#00e5ff]">
+              <span className="w-6 h-[1px] bg-[#00e5ff]" />
               SELECTED WORKS & PRODUCTIONS
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white uppercase">
@@ -66,7 +66,7 @@ export const Portfolio: React.FC = () => {
                 onClick={() => setSelectedFilter(filter.value)}
                 className={`px-3.5 py-2 rounded-lg text-xs font-mono-tech uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                   selectedFilter === filter.value
-                    ? 'bg-[#ff5500] text-white shadow-[0_0_15px_rgba(255,85,0,0.35)]'
+                    ? 'bg-[#00e5ff] text-white shadow-[0_0_15px_rgba(0,229,255,0.35)]'
                     : 'bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 border border-white/10'
                 }`}
               >
@@ -82,7 +82,7 @@ export const Portfolio: React.FC = () => {
             <div
               key={project.id}
               onClick={() => setActiveModalProject(project)}
-              className="group relative bg-[#0e1017] border border-white/10 rounded-xl overflow-hidden hover:border-[#ff5500]/60 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.8),0_0_20px_rgba(255,85,0,0.15)] flex flex-col cursor-pointer"
+              className="group relative bg-[#0e1017] border border-white/10 rounded-xl overflow-hidden hover:border-[#00e5ff]/60 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.8),0_0_20px_rgba(0,229,255,0.15)] flex flex-col cursor-pointer"
             >
               {/* Media Thumbnail Container */}
               <div className="relative overflow-hidden aspect-[16/10] bg-[#06070a]">
@@ -107,7 +107,7 @@ export const Portfolio: React.FC = () => {
 
                 {project.badge && (
                   <div className="absolute top-3 right-3 z-10">
-                    <span className="px-2 py-0.5 rounded bg-[#ff5500]/80 text-white text-[10px] font-mono-tech uppercase tracking-wider shadow-sm">
+                    <span className="px-2 py-0.5 rounded bg-[#00e5ff]/80 text-white text-[10px] font-mono-tech uppercase tracking-wider shadow-sm">
                       {project.badge}
                     </span>
                   </div>
@@ -116,7 +116,7 @@ export const Portfolio: React.FC = () => {
                 {/* Hover Quick Action Cue */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-[2px]">
                   <div className="px-4 py-2 rounded-full bg-white text-black font-semibold text-xs tracking-wider uppercase flex items-center gap-2 shadow-2xl transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                    <Eye className="w-3.5 h-3.5 text-[#ff5500]" />
+                    <Eye className="w-3.5 h-3.5 text-[#00e5ff]" />
                     <span>Inspect Details</span>
                   </div>
                 </div>
@@ -126,7 +126,7 @@ export const Portfolio: React.FC = () => {
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-bold text-white tracking-tight group-hover:text-[#ff5500] transition-colors">
+                    <h3 className="text-xl font-bold text-white tracking-tight group-hover:text-[#00e5ff] transition-colors">
                       {project.title}
                     </h3>
                   </div>
@@ -150,7 +150,7 @@ export const Portfolio: React.FC = () => {
                     ))}
                   </div>
 
-                  <span className="text-[#ff5500] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                  <span className="text-[#00e5ff] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                     <span>Open</span>
                     <ChevronRight className="w-3.5 h-3.5" />
                   </span>
@@ -159,7 +159,7 @@ export const Portfolio: React.FC = () => {
               </div>
 
               {/* Technical corner line */}
-              <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-transparent group-hover:border-[#ff5500] transition-colors duration-300" />
+              <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-transparent group-hover:border-[#00e5ff] transition-colors duration-300" />
             </div>
           ))}
         </div>

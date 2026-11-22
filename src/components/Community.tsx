@@ -12,8 +12,8 @@ export const Community: React.FC = () => {
         
         {/* Section Header */}
         <div className="space-y-3">
-          <div className="flex items-center gap-2 text-xs font-mono-tech tracking-widest uppercase text-[#ff5500]">
-            <span className="w-6 h-[1px] bg-[#ff5500]" />
+          <div className="flex items-center gap-2 text-xs font-mono-tech tracking-widest uppercase text-[#00e5ff]">
+            <span className="w-6 h-[1px] bg-[#00e5ff]" />
             INDUSTRY ENGAGEMENT & PERSONAL VENTURES
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white uppercase">
@@ -29,12 +29,12 @@ export const Community: React.FC = () => {
           {COMMUNITY_PROJECTS.map((item, index) => (
             <div
               key={index}
-              className="p-6 rounded-xl bg-[#0d0f16] border border-white/10 hover:border-[#ff5500]/50 transition-all duration-300 flex flex-col justify-between space-y-6 group"
+              className="p-6 rounded-xl bg-[#0d0f16] border border-white/10 hover:border-[#00e5ff]/50 transition-all duration-300 flex flex-col justify-between space-y-6 group"
             >
               <div className="space-y-4">
                 {/* Badge Header */}
                 <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-1 rounded bg-[#ff5500]/10 border border-[#ff5500]/30 text-[#ff5500] text-[10px] font-mono-tech uppercase tracking-wider">
+                  <span className="px-2.5 py-1 rounded bg-[#00e5ff]/10 border border-[#00e5ff]/30 text-[#00e5ff] text-[10px] font-mono-tech uppercase tracking-wider">
                     {item.badge}
                   </span>
                   <span className="text-[10px] font-mono-tech text-gray-500">
@@ -44,7 +44,7 @@ export const Community: React.FC = () => {
 
                 {/* Title & Subtitle */}
                 <div>
-                  <h3 className="text-lg font-bold text-white group-hover:text-[#ff5500] transition-colors tracking-tight">
+                  <h3 className="text-lg font-bold text-white group-hover:text-[#00e5ff] transition-colors tracking-tight">
                     {item.title}
                   </h3>
                   <p className="text-xs font-mono-tech text-gray-400 mt-1">
@@ -56,7 +56,7 @@ export const Community: React.FC = () => {
                 <div className="space-y-2 pt-2 border-t border-white/5">
                   {item.points.map((pt, pIdx) => (
                     <div key={pIdx} className="flex items-start gap-2 text-xs text-gray-300">
-                      <ChevronRight className="w-3.5 h-3.5 text-[#ff5500] mt-0.5 shrink-0" />
+                      <ChevronRight className="w-3.5 h-3.5 text-[#00e5ff] mt-0.5 shrink-0" />
                       <span>{pt}</span>
                     </div>
                   ))}
@@ -66,7 +66,7 @@ export const Community: React.FC = () => {
               {/* Decorative bottom corner */}
               <div className="pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-mono-tech text-gray-500">
                 <span>COMMUNITY INVOLVEMENT</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-[#ff5500] transition-colors" />
+                <span className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-[#00e5ff] transition-colors" />
               </div>
             </div>
           ))}

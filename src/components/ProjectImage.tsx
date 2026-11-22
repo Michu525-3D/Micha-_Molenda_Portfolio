@@ -37,10 +37,10 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
         <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-white/20" />
 
         {/* Diagonal Tech Hatching */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#ff5500_1px,transparent_1px)] [background-size:16px_16px]" />
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#00e5ff_1px,transparent_1px)] [background-size:16px_16px]" />
 
         <div className="relative z-10 flex flex-col items-center gap-3">
-          <div className="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#ff5500] shadow-[0_0_20px_rgba(255,85,0,0.15)] group-hover/placeholder:border-[#ff5500]/50 transition-colors">
+          <div className="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#00e5ff] shadow-[0_0_20px_rgba(0,229,255,0.15)] group-hover/placeholder:border-[#00e5ff]/50 transition-colors">
             <Box className="w-6 h-6 animate-pulse" />
           </div>
           <div className="space-y-1">
@@ -50,7 +50,7 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
             <div className="text-sm font-semibold text-white tracking-wide">
               {title || alt}
             </div>
-            <div className="text-[11px] font-mono-tech text-[#ff5500]/80">
+            <div className="text-[11px] font-mono-tech text-[#00e5ff]/80">
               [ Drop real render to: {src || 'assets'} ]
             </div>
           </div>
