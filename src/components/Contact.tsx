@@ -1,8 +1,10 @@
 import React from 'react';
 import { Mail, ArrowUpRight, Copy, Check } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Contact: React.FC = () => {
   const [copied, setCopied] = React.useState(false);
+  const { t } = useLanguage();
   const email = 'michal.molenda21@gmail.com';
 
   const copyEmailToClipboard = () => {
@@ -22,16 +24,16 @@ export const Contact: React.FC = () => {
         <div className="space-y-4">
           <div className="inline-flex items-center gap-2 text-xs font-mono-tech tracking-widest uppercase text-[#00e5ff]">
             <span className="w-6 h-[1px] bg-[#00e5ff]" />
-            INITIATE CONTACT
+            {t('contact.badge')}
             <span className="w-6 h-[1px] bg-[#00e5ff]" />
           </div>
 
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight uppercase">
-            Let's create something great.
+            {t('contact.title')}
           </h2>
 
           <p className="text-base sm:text-lg text-gray-300 max-w-xl mx-auto font-light">
-            Open to opportunities, collaborations and interesting projects.
+            {t('contact.desc')}
           </p>
         </div>
 
@@ -58,18 +60,18 @@ export const Contact: React.FC = () => {
             <div className="flex items-center gap-2">
               <button
                 onClick={copyEmailToClipboard}
-                className="px-3.5 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono-tech text-gray-300 flex items-center gap-1.5 transition-colors cursor-pointer"
+                className="px-3.5 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono-tech text-gray-300 flex items-center gap-1.5 transition-colors cursor-pointer glitch-hover"
                 title="Copy email address"
               >
                 {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
-                <span>{copied ? 'Copied!' : 'Copy'}</span>
+                <span>{copied ? t('contact.copied') : t('contact.copy')}</span>
               </button>
 
               <a
                 href={`mailto:${email}`}
-                className="px-4 py-2 rounded-lg bg-[#00e5ff] hover:bg-[#00b4d8] text-white text-xs font-mono-tech uppercase tracking-wider font-semibold shadow-[0_0_15px_rgba(0,229,255,0.3)] transition-all"
+                className="px-4 py-2 rounded-lg bg-[#00e5ff] hover:bg-[#00b4d8] text-black font-semibold text-xs font-mono-tech uppercase tracking-wider shadow-[0_0_15px_rgba(0,229,255,0.3)] transition-all glitch-hover"
               >
-                Contact Me
+                {t('hero.contact')}
               </a>
             </div>
           </div>

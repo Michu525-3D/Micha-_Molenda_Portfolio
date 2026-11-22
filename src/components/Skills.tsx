@@ -1,8 +1,11 @@
 import React from 'react';
 import { SKILL_CATEGORIES } from '../data/portfolioData';
 import { Box, Layers, Cpu, Gamepad2, Wrench, Check } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Skills: React.FC = () => {
+  const { t } = useLanguage();
+
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {
       case 'Box':
@@ -29,13 +32,13 @@ export const Skills: React.FC = () => {
         <div className="space-y-3">
           <div className="flex items-center gap-2 text-xs font-mono-tech tracking-widest uppercase text-[#00e5ff]">
             <span className="w-6 h-[1px] bg-[#00e5ff]" />
-            TECHNICAL PROFICIENCY & WORKFLOWS
+            {t('skills.badge')}
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white uppercase">
-            SKILLS & CAPABILITIES
+            {t('skills.title')}
           </h2>
           <p className="text-gray-400 text-sm md:text-base max-w-xl">
-            A comprehensive overview of competencies across 3D production, automotive/hard surface, real-time game art, and motion design.
+            {t('skills.desc')}
           </p>
         </div>
 

@@ -1,29 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Box } from 'lucide-react';
+import { Box, Menu, X, ArrowUpRight, Globe } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 40);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contact', href: '#contact' },
+    { name: t('nav.projects'), href: '#portfolio' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.experience'), href: '#experience' },
+    { name: t('nav.skills'), href: '#skills' },
+    { name: t('nav.community'), href: '#community' },
+    { name: t('nav.contact'), href: '#contact' },
   ];
 
   return (
@@ -50,38 +48,67 @@ export const Navbar: React.FC = () => {
           </div>
         </a>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative py-1 group glitch-text-hover"
+        {/* Desktop Navigation Links & Controls */}
+        <div className="hidden md:flex items-center gap-8">
+          <nav className="flex items-center gap-7">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative py-1 group glitch-text-hover"
+              >
+                {link.name}
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#00e5ff] transition-all duration-300 group-hover:w-full" />
+              </a>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-3 pl-2 border-l border-white/10">
+            {/* Language Switcher Button */}
+            <button
+              onClick={() => setLanguage(language === 'en' ? 'pl' : 'en')}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono-tech font-bold uppercase tracking-wider bg-white/5 hover:bg-white/10 border border-white/10 text-gray-200 hover:text-[#00e5ff] hover:border-[#00e5ff]/50 transition-all cursor-pointer glitch-hover"
+              title={language === 'en' ? 'Zmień na język polski' : 'Switch to English'}
+              aria-label="Toggle language"
             >
-              {link.name}
-              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#00e5ff] transition-all duration-300 group-hover:w-full" />
+              <Globe className="w-3.5 h-3.5 text-[#00e5ff]" />
+              <span className={language === 'en' ? 'text-[#00e5ff]' : 'text-gray-400'}>EN</span>
+              <span className="text-gray-600">/</span>
+              <span className={language === 'pl' ? 'text-[#00e5ff]' : 'text-gray-400'}>PL</span>
+            </button>
+
+            {/* External ArtStation Link */}
+            <a
+              href="https://www.artstation.com/energydronepl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono-tech uppercase tracking-wider bg-white/5 border border-white/10 text-gray-200 hover:bg-[#00e5ff] hover:text-black hover:border-[#00e5ff] transition-all duration-300 glitch-hover"
+            >
+              <span>{t('nav.artstation')}</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
-          ))}
+          </div>
+        </div>
 
-          <a
-            href="https://www.artstation.com/energydronepl"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono-tech uppercase tracking-wider bg-white/5 border border-white/10 text-gray-200 hover:bg-[#00e5ff] hover:text-white hover:border-[#00e5ff] transition-all duration-300 glitch-hover"
+        {/* Mobile Hamburger & Lang Button */}
+        <div className="md:hidden flex items-center gap-3">
+          <button
+            onClick={() => setLanguage(language === 'en' ? 'pl' : 'en')}
+            className="flex items-center gap-1 px-2.5 py-1 rounded bg-white/5 border border-white/15 text-xs font-mono-tech font-bold text-gray-200"
           >
-            <span>ArtStation</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </a>
-        </nav>
+            <span className={language === 'en' ? 'text-[#00e5ff]' : 'text-gray-400'}>EN</span>
+            <span className="text-gray-600">/</span>
+            <span className={language === 'pl' ? 'text-[#00e5ff]' : 'text-gray-400'}>PL</span>
+          </button>
 
-        {/* Mobile Hamburger Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-gray-300 hover:text-white focus:outline-none"
-          aria-label="Toggle navigation menu"
-        >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 text-gray-300 hover:text-white focus:outline-none"
+            aria-label="Toggle navigation menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu Dropdown */}
@@ -98,26 +125,16 @@ export const Navbar: React.FC = () => {
                 {link.name}
               </a>
             ))}
-            <div className="pt-2 flex flex-col gap-2">
-              <a
-                href="https://www.artstation.com/energydronepl"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between px-4 py-2.5 rounded bg-white/5 border border-white/10 text-sm font-medium text-white"
-              >
-                <span>ArtStation Profile</span>
-                <ArrowUpRight className="w-4 h-4 text-[#00e5ff]" />
-              </a>
-              <a
-                href="https://pl.linkedin.com/in/micha%C5%82-molenda"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between px-4 py-2.5 rounded bg-white/5 border border-white/10 text-sm font-medium text-white"
-              >
-                <span>LinkedIn Profile</span>
-                <ArrowUpRight className="w-4 h-4 text-[#0ea5e9]" />
-              </a>
-            </div>
+
+            <a
+              href="https://www.artstation.com/energydronepl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-between py-2 text-base font-medium text-gray-200 hover:text-[#00e5ff]"
+            >
+              <span>{t('nav.artstation')}</span>
+              <ArrowUpRight className="w-4 h-4 text-[#00e5ff]" />
+            </a>
           </div>
         </div>
       )}

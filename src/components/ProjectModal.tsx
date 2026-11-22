@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import type { Project } from '../data/portfolioData';
 import { X, Cpu, CheckCircle2, Image as ImageIcon } from 'lucide-react';
 import { ProjectImage } from './ProjectImage';
+import { useLanguage } from '../context/LanguageContext';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -10,6 +11,7 @@ interface ProjectModalProps {
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
   const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setActiveImageIndex(0);
@@ -138,7 +140,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <div className="space-y-3 pt-2">
                 <h3 className="text-sm font-mono-tech uppercase tracking-wider text-white font-bold flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#00e5ff]" />
-                  Key Scope & Responsibilities
+                  {t('portfolio.responsibilities')}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {project.responsibilities.map((resp, i) => (
@@ -160,7 +162,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               {/* Context / Client info */}
               <div className="p-4 rounded-lg bg-white/[0.03] border border-white/10 space-y-3">
                 <div className="text-xs font-mono-tech text-gray-400 uppercase tracking-wider">
-                  Production Context
+                  {t('portfolio.context')}
                 </div>
                 <div className="text-sm font-semibold text-white">
                   {project.clientOrContext}
@@ -182,7 +184,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono-tech text-gray-400 uppercase tracking-wider flex items-center gap-1.5">
                     <Cpu className="w-3.5 h-3.5 text-[#00e5ff]" />
-                    Tools & Technologies
+                    {t('portfolio.tools')}
                   </span>
                   <span className="text-[10px] text-gray-500 font-mono-tech">Editable in data</span>
                 </div>

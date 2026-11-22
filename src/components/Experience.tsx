@@ -1,8 +1,11 @@
 import React from 'react';
 import { EXPERIENCES } from '../data/portfolioData';
 import { Calendar, ChevronRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Experience: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="experience" className="relative py-28 border-t border-white/5 bg-[#08080a]">
       {/* Decorative background glow */}
@@ -14,13 +17,13 @@ export const Experience: React.FC = () => {
         <div className="space-y-3">
           <div className="flex items-center gap-2 text-xs font-mono-tech tracking-widest uppercase text-[#00e5ff]">
             <span className="w-6 h-[1px] bg-[#00e5ff]" />
-            CAREER & PRODUCTION HISTORY
+            {t('exp.badge')}
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white uppercase">
-            EXPERIENCE
+            {t('exp.title')}
           </h2>
           <p className="text-gray-400 text-sm md:text-base max-w-xl">
-            Commercial agency production, game development internships, and high-fidelity 3D visualization.
+            {t('exp.desc')}
           </p>
         </div>
 

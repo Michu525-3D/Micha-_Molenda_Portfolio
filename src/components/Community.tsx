@@ -1,8 +1,11 @@
 import React from 'react';
 import { COMMUNITY_PROJECTS } from '../data/portfolioData';
 import { ChevronRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Community: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="community" className="relative py-28 border-t border-white/5 bg-[#08080a]">
       {/* Background accents */}
@@ -14,13 +17,13 @@ export const Community: React.FC = () => {
         <div className="space-y-3">
           <div className="flex items-center gap-2 text-xs font-mono-tech tracking-widest uppercase text-[#00e5ff]">
             <span className="w-6 h-[1px] bg-[#00e5ff]" />
-            INDUSTRY ENGAGEMENT & PERSONAL VENTURES
+            {t('community.badge')}
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white uppercase">
-            COMMUNITY & PERSONAL PROJECTS
+            {t('community.title')}
           </h2>
           <p className="text-gray-400 text-sm md:text-base max-w-xl">
-            Active industry involvement through AAA playtesting programs, conferences, community mods, and dedicated after-hours game development.
+            {t('community.desc')}
           </p>
         </div>
 

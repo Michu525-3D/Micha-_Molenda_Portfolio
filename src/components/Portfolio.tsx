@@ -4,16 +4,18 @@ import { PROJECTS } from '../data/portfolioData';
 import { ProjectImage } from './ProjectImage';
 import { ProjectModal } from './ProjectModal';
 import { Eye, ChevronRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Portfolio: React.FC = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>('ALL');
   const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
+  const { t } = useLanguage();
 
   const filterOptions = [
-    { label: 'ALL WORKS', value: 'ALL' },
-    { label: 'GAME DEVELOPMENT', value: 'GAME' },
-    { label: 'VEHICLE & HARD SURFACE', value: 'VEHICLE' },
-    { label: '3D VISUALIZATION', value: 'VISUALIZATION' },
+    { label: t('portfolio.all'), value: 'ALL' },
+    { label: t('portfolio.gameArt'), value: 'GAME' },
+    { label: t('portfolio.vehicles'), value: 'VEHICLE' },
+    { label: t('portfolio.props'), value: 'VISUALIZATION' },
   ];
 
   const filteredProjects = PROJECTS.filter((item) => {
@@ -48,13 +50,13 @@ export const Portfolio: React.FC = () => {
           <div className="space-y-3">
             <div className="flex items-center gap-2 text-xs font-mono-tech tracking-widest uppercase text-[#00e5ff]">
               <span className="w-6 h-[1px] bg-[#00e5ff]" />
-              SELECTED WORKS & PRODUCTIONS
+              {t('portfolio.badge')}
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white uppercase">
-              PORTFOLIO SHOWCASE
+              {t('portfolio.title')}
             </h2>
             <p className="text-gray-400 text-sm md:text-base max-w-xl">
-              High-poly hard surface modeling, vehicle craft, modular environment sets, and real-time interactive game development projects.
+              {t('portfolio.desc')}
             </p>
           </div>
 
@@ -151,7 +153,7 @@ export const Portfolio: React.FC = () => {
                   </div>
 
                   <span className="text-[#00e5ff] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    <span>Open</span>
+                    <span>{t('portfolio.viewDetails')}</span>
                     <ChevronRight className="w-3.5 h-3.5" />
                   </span>
                 </div>

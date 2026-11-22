@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { User } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const About: React.FC = () => {
   const [photoError, setPhotoError] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <section id="about" className="relative py-28 border-t border-white/5 bg-[#0a0c12]">
@@ -15,10 +17,10 @@ export const About: React.FC = () => {
         <div className="space-y-3">
           <div className="flex items-center gap-2 text-xs font-mono-tech tracking-widest uppercase text-[#00e5ff]">
             <span className="w-6 h-[1px] bg-[#00e5ff]" />
-            PROFILE & ARTISTIC PHILOSOPHY
+            {t('about.badge')}
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white uppercase">
-            ABOUT ME
+            {t('about.title')}
           </h2>
         </div>
 
@@ -77,16 +79,36 @@ export const About: React.FC = () => {
             
             <div className="p-6 md:p-8 rounded-xl bg-white/[0.02] border border-white/10 space-y-5">
               <p className="text-base sm:text-lg text-gray-200 leading-relaxed font-light">
-                Hi, I'm Michał – a 3D Artist focused on <strong className="text-white font-semibold">Hard Surface and Vehicle Art</strong>, with experience across game development, 3D visualization and motion design.
+                {t('about.p1')}
               </p>
 
               <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-light">
-                I enjoy creating detailed assets, vehicles and visual experiences, combining technical precision with creativity. My experience ranges from game art production and environment assets to product visualization, motion design and experimental projects.
+                {t('about.p2')}
               </p>
 
-              <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-light border-l-2 border-[#00e5ff] pl-4">
-                I'm constantly developing my skills, exploring new workflows and looking for opportunities to create compelling visual experiences.
-              </p>
+              <div className="border-t border-white/10 pt-4 mt-2">
+                <div className="text-xs font-mono-tech text-[#00e5ff] uppercase tracking-wider mb-3 font-semibold">
+                  {t('about.specTitle')}
+                </div>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-300 font-mono-tech">
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00e5ff] mt-1 shrink-0" />
+                    <span>{t('about.spec1')}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00e5ff] mt-1 shrink-0" />
+                    <span>{t('about.spec2')}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00e5ff] mt-1 shrink-0" />
+                    <span>{t('about.spec3')}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00e5ff] mt-1 shrink-0" />
+                    <span>{t('about.spec4')}</span>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* Core Pillars */}

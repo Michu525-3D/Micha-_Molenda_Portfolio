@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { ArrowDown, User, Mail, Crosshair, ChevronRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Hero: React.FC = () => {
   const [photoError, setPhotoError] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
@@ -26,9 +28,9 @@ export const Hero: React.FC = () => {
           {/* Main Title & Specialist Role */}
           <div className="space-y-2">
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white uppercase leading-[1.05]">
-              MICHAŁ <br />
+              {t('hero.title1')} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">
-                MOLENDA
+                {t('hero.title2')}
               </span>
             </h1>
             <p className="text-xl sm:text-2xl font-mono-tech text-[#00e5ff] font-semibold tracking-wide flex items-center gap-2">
@@ -43,7 +45,7 @@ export const Hero: React.FC = () => {
           </p>
 
           <p className="text-sm md:text-base text-gray-400 max-w-xl">
-            Specialized in complex mechanical forms, vehicle architecture, environment props, and real-time game art pipelines. Combining technical precision with cinematic visual fidelity.
+            {t('hero.desc')}
           </p>
 
           {/* Action Buttons: View Resume, About Me, Contact */}
@@ -52,7 +54,7 @@ export const Hero: React.FC = () => {
               href="#portfolio"
               className="px-6 py-3.5 rounded bg-[#00e5ff] hover:bg-[#00b4d8] text-white font-semibold text-sm tracking-wider uppercase transition-all duration-300 shadow-[0_0_25px_rgba(0,229,255,0.4)] flex items-center gap-2 group cursor-pointer glitch-hover"
             >
-              <span>Explore Works</span>
+              <span>{t('hero.explore')}</span>
               <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
 
@@ -61,7 +63,7 @@ export const Hero: React.FC = () => {
               className="px-6 py-3.5 rounded bg-white/5 hover:bg-white/10 border border-white/15 text-white font-medium text-sm tracking-wider uppercase transition-all duration-300 flex items-center gap-2 cursor-pointer glitch-hover"
             >
               <User className="w-4 h-4 text-gray-400" />
-              <span>About Me</span>
+              <span>{t('hero.aboutMe')}</span>
             </a>
 
             <a
@@ -69,23 +71,23 @@ export const Hero: React.FC = () => {
               className="px-6 py-3.5 rounded bg-white/5 hover:bg-white/10 border border-white/15 text-white font-medium text-sm tracking-wider uppercase transition-all duration-300 flex items-center gap-2 cursor-pointer glitch-hover"
             >
               <Mail className="w-4 h-4 text-[#00e5ff]" />
-              <span>Contact</span>
+              <span>{t('hero.contact')}</span>
             </a>
           </div>
 
           {/* Technical Specs Counter Bar */}
           <div className="grid grid-cols-3 gap-6 pt-6 border-t border-white/10 w-full max-w-lg">
             <div>
-              <div className="text-2xl font-bold font-mono-tech text-white">AAA</div>
-              <div className="text-xs text-gray-400 uppercase tracking-wider font-mono-tech">Hard Surface Spec</div>
+              <div className="text-2xl font-bold font-mono-tech text-white">{t('hero.stat1.val')}</div>
+              <div className="text-xs text-gray-400 uppercase tracking-wider font-mono-tech">{t('hero.stat1.label')}</div>
             </div>
             <div>
-              <div className="text-2xl font-bold font-mono-tech text-[#00e5ff]">PBR</div>
-              <div className="text-xs text-gray-400 uppercase tracking-wider font-mono-tech">Real-time Pipeline</div>
+              <div className="text-2xl font-bold font-mono-tech text-[#00e5ff]">{t('hero.stat2.val')}</div>
+              <div className="text-xs text-gray-400 uppercase tracking-wider font-mono-tech">{t('hero.stat2.label')}</div>
             </div>
             <div>
-              <div className="text-2xl font-bold font-mono-tech text-white">UE5</div>
-              <div className="text-xs text-gray-400 uppercase tracking-wider font-mono-tech">Game Engine Ready</div>
+              <div className="text-2xl font-bold font-mono-tech text-white">{t('hero.stat3.val')}</div>
+              <div className="text-xs text-gray-400 uppercase tracking-wider font-mono-tech">{t('hero.stat3.label')}</div>
             </div>
           </div>
 
