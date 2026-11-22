@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { ArrowDown, User, Mail, Crosshair, ChevronRight } from 'lucide-react';
+import { ArrowDown, User, Mail, Crosshair, ChevronRight, FileText } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onOpenCV?: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
   const [photoError, setPhotoError] = useState(false);
   const { t } = useLanguage();
 
@@ -57,6 +61,16 @@ export const Hero: React.FC = () => {
               <span>{t('hero.explore')}</span>
               <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
+
+            {onOpenCV && (
+              <button
+                onClick={onOpenCV}
+                className="px-6 py-3.5 rounded bg-white/5 hover:bg-white/10 border border-[#00e5ff]/40 text-[#00e5ff] hover:text-white font-medium text-sm tracking-wider uppercase transition-all duration-300 flex items-center gap-2 cursor-pointer glitch-hover"
+              >
+                <FileText className="w-4 h-4 text-[#00e5ff]" />
+                <span>{t('nav.cv')}</span>
+              </button>
+            )}
 
             <a
               href="#about"

@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Box, Menu, X, ArrowUpRight, Globe } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  onOpenCV?: () => void;
+  isCVOpen?: boolean;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ onOpenCV, isCVOpen = false }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
@@ -64,6 +69,20 @@ export const Navbar: React.FC = () => {
           </nav>
 
           <div className="flex items-center gap-3 pl-2 border-l border-white/10">
+            {/* CV / Resume Page Button */}
+            {onOpenCV && (
+              <button
+                onClick={onOpenCV}
+                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono-tech uppercase tracking-wider font-semibold border transition-all cursor-pointer glitch-hover ${
+                  isCVOpen
+                    ? 'bg-[#00e5ff] text-black border-[#00e5ff] shadow-[0_0_15px_rgba(0,229,255,0.4)]'
+                    : 'bg-white/5 border-white/10 text-gray-200 hover:text-white hover:border-[#00e5ff]/50 hover:bg-white/10'
+                }`}
+              >
+                <span>{t('nav.cv')}</span>
+              </button>
+            )}
+
             {/* Language Switcher Button */}
             <button
               onClick={() => setLanguage(language === 'en' ? 'pl' : 'en')}
@@ -115,6 +134,17 @@ export const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-[#0a0c10] border-b border-white/10 px-6 py-6 space-y-4 animate-in fade-in slide-in-from-top-4 duration-200">
           <div className="flex flex-col space-y-3">
+            {onOpenCV && (
+              <button
+                onClick={() => {
+                  onOpenCV();
+                  setMobileMenuOpen(false);
+                }}
+                className="text-left text-base font-semibold text-[#00e5ff] py-2 border-b border-white/10"
+              >
+                {t('nav.cv')}
+              </button>
+            )}
             {navLinks.map((link) => (
               <a
                 key={link.name}

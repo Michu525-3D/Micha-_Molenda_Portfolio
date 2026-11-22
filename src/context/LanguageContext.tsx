@@ -17,6 +17,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.skills': 'Skills',
     'nav.community': 'Community',
     'nav.contact': 'Contact',
+    'nav.cv': 'Resume / CV',
     'nav.artstation': 'ArtStation',
 
     // Hero
@@ -96,6 +97,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.skills': 'Umiejętności',
     'nav.community': 'Działalność',
     'nav.contact': 'Kontakt',
+    'nav.cv': 'CV / Życiorys',
     'nav.artstation': 'ArtStation',
 
     // Hero
